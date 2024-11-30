@@ -30,7 +30,7 @@ You have access to the following tools:
 
 
 Use the following format STRICTLY:
-
+ 
 
 Question: the input question you must answer
 Thought: you should always think about what to do

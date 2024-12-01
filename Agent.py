@@ -4,7 +4,6 @@ from langchain.agents import AgentExecutor, create_react_agent
 from Tools import work_experience_to_pm_focused_entry,rewrite_to_PM_focused, llm
 from langchain.memory import ConversationBufferMemory
 
-
 # Define tool
 convert_points_tool = Tool(
     name="work_experience_to_pm_focused_entry",
@@ -37,7 +36,7 @@ Thought: you should always think about what to do
 Action: the action to take, should be one of [{tool_names}]
 Action Input: the input to the action
 Observation: the result of the action
-... (this Thought/Action/Action Input/Observation can repeat N times)
+... (this Thought/Action/Action Input/Observation can repeat 5 times)
 Thought: I now know the final answer
 Final Answer: [The transformed resume following ALL rules below]
 

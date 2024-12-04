@@ -13,10 +13,12 @@ from glob import glob
 from pinecone import Pinecone, ServerlessSpec
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from dotenv import load_dotenv
+import pinecone
 
 # Load the OpenAI API key
 load_dotenv("secret_keys.env")
 pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
+pinecone.config.pool_threads = 1
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 

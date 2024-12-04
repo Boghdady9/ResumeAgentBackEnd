@@ -1,6 +1,8 @@
 from flask import Flask, request, Response
+import os  # For retrieving environment variables
 from data_loader import PDFTextProcessor
 from Agent import agent as create_agent
+
 
 # Initialize the Flask app
 app = Flask(__name__)
@@ -31,4 +33,6 @@ def process_resume():
     return Response(outcome, mimetype='text/plain')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    # Use the environment variable for the port, or default to 5000 for local development
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, port=port)

@@ -2,10 +2,13 @@ from flask import Flask, request, Response
 import os  # For retrieving environment variables
 from data_loader import PDFTextProcessor
 from Agent import agent as create_agent
+from flask_cors import CORS
 
 
 # Initialize the Flask app
 app = Flask(__name__)
+
+CORS(app)
 
 @app.route('/')
 def home():

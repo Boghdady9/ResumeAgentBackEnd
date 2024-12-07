@@ -2,7 +2,6 @@ from glob import glob
 import pymupdf
 import re
 
-
 class PDFTextProcessor:
     def __init__(self, pdf_path):
         """

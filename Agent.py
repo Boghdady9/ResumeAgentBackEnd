@@ -128,6 +128,7 @@ USER REQUEST EDITING RULES:
 Question: {input}
 Thought:{agent_scratchpad}"""
 
+
 prompt = PromptTemplate.from_template(template)
 
 
@@ -161,8 +162,6 @@ def agent(input):
     """
     response = agent_executor.invoke({"input": input})
 
-    if isinstance(response, dict) and "output" in response: 
-      return display(Markdown(response['output']))
-
-
-      
+    if isinstance(response, dict) and "output" in response:
+          
+      return response['output']

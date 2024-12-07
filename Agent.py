@@ -3,7 +3,7 @@ from langchain.tools import Tool
 from langchain.agents import AgentExecutor, create_react_agent
 from Tools import rewrite_to_PM_focused, llm
 from langchain.memory import ConversationBufferMemory
-
+from IPython.display import display, Markdown #new import added 12/7 testing
 
 # Define tool
 convert_points_tool = Tool(
@@ -161,6 +161,8 @@ def agent(input):
     """
     response = agent_executor.invoke({"input": input})
 
-    if isinstance(response, dict) and "output" in response:
-        return response["output"]
-    return response
+    if isinstance(response, dict) and "output" in response: 
+      return display(Markdown(response['output']))
+
+
+      
